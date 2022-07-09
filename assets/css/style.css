@@ -116,18 +116,13 @@ a:hover {
 }
 
 .giphy__img-col {
-  width: 100%;
-  max-height: 268px;
+  width: 300px;
   overflow: hidden;
 }
 
 .giphy__img-col img {
-  object-fit: cover;
   object-fit: contain;
-  max-width: 100%;
-  max-height: 100%;
   width: 300px;
-  height: 300px;
 }
 
 .poster__body {
@@ -149,21 +144,29 @@ a:hover {
 }
 
 .giphy__title {
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 15px;
+  line-height: 15px;
   padding: 10px;
-  font-size: auto;
+  font-size: 0.9rem;
   font-weight: bold;
+  white-space: nowrap;
+  margin-bottom: -30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   background: var(--button-bg-color);
 }
 
 .poster__plot {
+  align-items: center;
   font-size: 1.4rem;
 }
 
 .giphy-cols {
+  width: 300px;
   display: flex;
-  flex-flow: row wrap;
+  justify-content: space-around;
+  flex-direction: row;
   align-items: center;
   text-align: center;
   margin: 5px 0;
@@ -227,6 +230,14 @@ a:hover {
     width: 100%;
   }
 
+  .poster__title {
+    font-size: 1.4rem;
+  }
+  
+  .giphy-cols {
+    flex-direction: column;
+  }
+
   .giphy-cols .giphy-col {
     margin-bottom: 5px;
     flex-basis: 40%;
@@ -245,11 +256,27 @@ a:hover {
     flex-direction: column;
     padding-left: 120px;
   }
+
+  .errorMessageEl {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 680px) {
+  .poster__title {
+    font-size: 1.4rem;
+  }
+
+  .giphy-cols {
+    flex-direction: column;
+  }
+
   .giphy-cols .giphy-col {
     margin: 0 0 5px 0;
     flex-basis: 100%;
+  }
+
+  .errorMessageEl {
+    font-size: .8rem;
   }
 }

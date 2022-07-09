@@ -3,8 +3,15 @@ $("form").submit(function (event) {
     event.preventDefault();
     var movie = $("input").val();
     if (movie) {
-        getInfoMovie(movie)
+        getInfoMovie(movie);
+        getGIPHY(movie);
         $('input').val("");
+    } else {
+        // return "Sorry that's (probably) a TV show not a movie"
+        $('#poster__card').addClass("hidden");
+        $('#giphy-cols').addClass("hidden");
+        $('#errorMessageEl').removeClass("hidden");
+        $('#errorMessageEl').html("Sorry, please input title of movie you want to find.");
     }
 });
 
@@ -21,6 +28,7 @@ function getInfoMovie(movie) {
                         displayMovieInfo(data);
                         genres = data.Genre.split(", ");
                         $('#errorMessageEl').addClass("hidden");
+                        $('#giphy-cols').removeClass("hidden");
                         $('#poster__card').removeClass("hidden");
 
 
@@ -28,6 +36,7 @@ function getInfoMovie(movie) {
                     else {
                         // return "Sorry that's (probably) a TV show not a movie"
                         $('#poster__card').addClass("hidden");
+                        $('#giphy-cols').addClass("hidden");
                         $('#errorMessageEl').removeClass("hidden");
                         $('#errorMessageEl').html("Sorry, we couldn't find that movie, please double check your spelling and try again.");
                     }
@@ -35,6 +44,7 @@ function getInfoMovie(movie) {
                 else {
                     // return data.Error somewhere
                     $('#poster__card').addClass("hidden");
+                    $('#giphy-cols').addClass("hidden");
                     $('#errorMessageEl').removeClass("hidden");
                     $('#errorMessageEl').html(data.Error);
                 }
@@ -87,17 +97,18 @@ function displayMovieInfo(movieData) {
 
 }
 
-function getGIPHY() {
-    let urlGIPHY = "https://api.giphy.com/v1/stickers/packs?api_key=MEJ76RCs9ETc1LP00uDgOw1O0rPkU0ah";
+function getGIPHY(movie) {
+    // https://api.giphy.com/v1/gifs/search?api_key=${movie}&limit=3&offset=0&rating=pg-13&lang=en
+    var urlGIPHY = `https://api.giphy.com/v1/gifs/search?api_key=MEJ76RCs9ETc1LP00uDgOw1O0rPkU0ah&q=${movie}&limit=3&offset=0&rating=pg-13&lang=en`
 
     fetch(urlGIPHY)
         .then(response => response.json())
         .then(data => {
-            for (var i = 1; i <= 3; i++) {
-                let gifTotal = data.data.length;
-                var j = Math.floor(Math.random() * gifTotal);
-                $('#giphy__img-col-' + i).attr("src", "https://i.giphy.com/" + data.data[j].featured_gif.id + ".gif ");
-                $('#giphy__title-' + i).html(data.data[j].featured_gif.title)
+            console.log(data)
+            for (var i = 0; i < 3; i++) {
+                var j = i + 1;
+                $('#giphy__img-col-' + j).attr("src", "https://i.giphy.com/" + data.data[i].id + ".gif ");
+                $('#giphy__title-' + j).html(data.data[i].title)
             }
         });
 }
@@ -105,5 +116,5 @@ function getGIPHY() {
 // call GIPHY api function.
 $(document).ready(function () {
     getInfoMovie("Guardians of the Galaxy Vol. 2");
-    getGIPHY();
+    getGIPHY("Guardians of the Galaxy Vol. 2")
 });
