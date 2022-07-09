@@ -1,225 +1,255 @@
 :root {
-    --top-bar-color: rgb(16, 80, 165);
-    --background: #f5f6fa;
-    --text: #9c9c9c;
-    --input-bg-color: #fff;
-    --input-text-color: #201e1e;
-    --button-bg-color: #6074f3;
-    --button-hover-bg-color: #3651fd;
-    --button-text-color: #fff;
-    --box-shadow-color:#888;
-  }
-  
-  
-  a {
-    color: inherit;
-  }
-  
-  a:hover {
-    color: #7f8ff4;
-  }
-  
+  --top-bar-color: rgb(16, 80, 165);
+  --background: #f5f6fa;
+  --text: #9c9c9c;
+  --input-bg-color: #fff;
+  --input-text-color: #201e1e;
+  --button-bg-color: #6074f3;
+  --button-hover-bg-color: #3651fd;
+  --button-text-color: #fff;
+  --box-shadow-color: #888;
+}
+
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #7f8ff4;
+}
+
+.container {
+  background: var(--top-bar-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  transition: all 200ms ease-in;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: #7f8ff4;
+  color: #fff;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 15px 10px;
+}
+
+.btn--primary:hover {
+  background: #6c7ff2;
+}
+
+.btn--primary:active {
+  background: #7f8ff4;
+  box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn--inside {
+  margin-left: -90px;
+}
+
+.form__field {
+  width: 360px;
+  background: #fff;
+  color: #a3a3a3;
+  font: inherit;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: 0;
+  padding: 20px 10px;
+}
+
+.poster__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.poster__card {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--background);
+  width: 68%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 5px 0px var(--box-shadow-color);
+  margin: 0px 5px;
+  max-width: 100%;
+  min-height: 750px;
+  cursor: pointer;
+}
+
+.poster__img {
+  width: 100%;
+  overflow: hidden;
+}
+
+.poster__img img {
+  object-fit: cover;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  width: 300px;
+  height: 500px;
+  aspect-ratio: 1 / 1;
+}
+
+.giphy__img-col {
+  width: 100%;
+  max-height: 268px;
+  overflow: hidden;
+}
+
+.giphy__img-col img {
+  object-fit: cover;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  width: 300px;
+  height: 300px;
+}
+
+.poster__body {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 13px;
+}
+
+.giphy__body {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 13px;
+}
+
+.poster__title {
+  font-size: 1.875rem;
+}
+
+.giphy__title {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  font-size: auto;
+  font-weight: bold;
+  background: var(--button-bg-color);
+}
+
+.poster__plot {
+  font-size: 1.4rem;
+}
+
+.giphy-cols {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.giphy-col {
+  flex: 1;
+  margin: 2px;
+  padding: 10px;
+  background: var(--background);
+  transition: 0.3s;
+}
+
+.giphy-col:first-child {
+  margin-left: 0;
+  background-color: var(--background);
+  box-shadow: 0px 4px 5px 0px var(--box-shadow-color);
+}
+
+.giphy-col:last-child {
+  margin-left: 0;
+  background-color: var(--background);
+  box-shadow: 0px 4px 5px 0px var(--box-shadow-color);
+}
+
+.poster__footer {
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  padding: 30px;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+.errorMessageEl {
+  width: 75%;
+  height: 250px;
+  font-size: auto;
+  line-height: 250px;
+  text-align: center;
+  background: var(--background);
+  padding: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
   .container {
-    background: var(--top-bar-color);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: column;
   }
-  
-  .uppercase {
-    text-transform: uppercase;
-  }
-  
-  .btn {
-    display: inline-block;
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    border: 0;
-    outline: 0;
-    padding: 0;
-    transition: all 200ms ease-in;
-    cursor: pointer;
-  }
-  
-  .btn--primary {
-    background: #7f8ff4;
-    color: #fff;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    padding: 15px 10px;
-  }
-  
-  .btn--primary:hover {
-    background: #6c7ff2;
-  }
-  
-  .btn--primary:active {
-    background: #7f8ff4;
-    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
-  }
-  
-  .btn--inside {
-    margin-left: -90px;
-  }
-  
+
   .form__field {
-    width: 360px;
-    background: #fff;
-    color: #a3a3a3;
-    font: inherit;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-    border: 0;
-    outline: 0;
-    padding: 20px 10px;
+    width: 280px;
+    margin-bottom: 10px;
+
   }
-  
-  .poster__container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 10px;
-  }
-  
+
   .poster__card {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: var(--background);
-    width: 68%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 4px 5px 0px var(--box-shadow-color);
-    margin: 0px 5px;
-    max-width: 100%;
-    min-height: 750px;
-    cursor: pointer;
-  }
-  
-  .poster__img {
     width: 100%;
-    overflow: hidden;
   }
-  
-  .poster__img img {
-    object-fit: cover;
-    object-fit: contain;
-    max-width: 100%;
-    max-height: 100%;
-    width: 300px;
-    height: 500px;
-    aspect-ratio: 1 / 1;
+
+  .giphy-cols .giphy-col {
+    margin-bottom: 5px;
+    flex-basis: 40%;
   }
-  
-  .poster__img-col {
-    width: 100%;
-    max-height: 268px;
-    overflow: hidden;
+
+  .giphy-cols .giphy-col:last-child {
+    flex-basis: 100%;
+    margin: 0;
   }
-  
-  .poster__img-col img {
-    object-fit: cover;
-    object-fit: contain;
-    max-width: 100%;
-    max-height: 100%;
-    width: 300px;
-    height: 300px;
+
+  .giphy-cols .giphy-col:nth-last-child(2) {
+    margin-right: 0;
   }
-  
-  .poster__body {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding: 13px;
-  }
-  
-  .poster__title {
-    font-size: 1.875rem;
-  }
-  
-  .poster__intro {
-    font-size: 1.4rem;
-  }
-  
-  .poster-cols {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    text-align: center;
-    margin: 5px 0;
-  }
-  
-  .poster-col {
-    flex: 1;
-    margin: 2px;
-    padding: 10px;
-    background: var(--background);
-    transition: 0.3s;
-  }
-  
-  .poster-col:first-child {
-    margin-left: 0;
-    background-color: var(--background);
-    box-shadow: 0px 4px 5px 0px var(--box-shadow-color);
-  }
-  
-  .poster-col:last-child {
-    margin-left: 0;
-    background-color: var(--background);
-    box-shadow: 0px 4px 5px 0px var(--box-shadow-color);
-  }
-  
+
   .poster__footer {
-    display: flex;
-    justify-content: space-around;
-    text-align: left;
-    padding: 30px;
-    font-size: 1.3rem;
-    width: 100%;
+    flex-direction: column;
+    padding-left: 120px;
   }
-  
-  @media screen and (max-width: 980px) {
-    .container {
-        flex-direction: column;
-    }
-  
-    .form__field {
-        width: 280px;
-        margin-bottom: 10px;
-  
-    }
-  
-    .poster__card {
-        width: 100%;
-    }
-  
-    .poster-cols .poster-col {
-        margin-bottom: 5px;
-        flex-basis: 40%;
-    }
-  
-    .poster-cols .poster-col:last-child {
-        flex-basis: 100%;
-        margin: 0;
-    }
-  
-    .poster-cols .poster-col:nth-last-child(2) {
-        margin-right: 0;
-    }
-  
-    .poster__footer {
-        flex-direction: column;
-        padding-left: 120px;
-    }
+}
+
+@media screen and (max-width: 680px) {
+  .giphy-cols .giphy-col {
+    margin: 0 0 5px 0;
+    flex-basis: 100%;
   }
-  
-  @media screen and (max-width: 680px) {
-    .poster-cols .poster-col {
-        margin: 0 0 5px 0;
-        flex-basis: 100%;
-    }
-  }
+}
