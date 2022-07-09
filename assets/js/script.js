@@ -115,7 +115,8 @@ function getGIPHY(movie) {
 }
 
 // call GIPHY api function.
-// $(document).ready(function () {
-//     getInfoMovie("Guardians of the Galaxy Vol. 2");
-//     getGIPHY("Guardians of the Galaxy Vol. 2")
-// });
+$(document).ready(function () {
+    $('#errorMessageEl').addClass("hidden");
+    $('#giphy-cols').addClass("hidden");
+    $('#poster__card').addClass("hidden");
+});
