@@ -10,7 +10,7 @@ $("form").submit(function (event) {
 
 // API call
 function getInfoMovie(movie) {
-    var apiUrl = `http://www.omdbapi.com/?apikey=1050cada&t=${movie}&plot=full`
+    var apiUrl = `https://www.omdbapi.com/?apikey=1050cada&t=${movie}&plot=full`
 
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
@@ -88,7 +88,7 @@ function displayMovieInfo(movieData) {
 }
 
 function getGIPHY() {
-    let urlGIPHY = "http://api.giphy.com/v1/stickers/packs?api_key=MEJ76RCs9ETc1LP00uDgOw1O0rPkU0ah";
+    let urlGIPHY = "https://api.giphy.com/v1/stickers/packs?api_key=MEJ76RCs9ETc1LP00uDgOw1O0rPkU0ah";
 
     fetch(urlGIPHY)
         .then(response => response.json())
