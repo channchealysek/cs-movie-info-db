@@ -27,6 +27,7 @@ function getInfoMovie(movie) {
                         movieApi = data;
                         displayMovieInfo(data);
                         genres = data.Genre.split(", ");
+                        $('#poster').removeClass("hidden");
                         $('#errorMessageEl').addClass("hidden");
                         $('#giphy-cols').removeClass("hidden");
                         $('#poster__card').removeClass("hidden");
@@ -114,7 +115,7 @@ function getGIPHY(movie) {
 }
 
 // call GIPHY api function.
-$(document).ready(function () {
-    getInfoMovie("Guardians of the Galaxy Vol. 2");
-    getGIPHY("Guardians of the Galaxy Vol. 2")
-});
+// $(document).ready(function () {
+//     getInfoMovie("Guardians of the Galaxy Vol. 2");
+//     getGIPHY("Guardians of the Galaxy Vol. 2")
+// });
