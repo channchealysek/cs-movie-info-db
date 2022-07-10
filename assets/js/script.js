@@ -1,10 +1,10 @@
-
 $("form").submit(function (event) {
     event.preventDefault();
     var movie = $("input").val();
     if (movie) {
         getInfoMovie(movie);
         getGIPHY(movie);
+        addtosrch(movie);
         $('input').val("");
     } else {
         // return "Sorry that's (probably) a TV show not a movie"
@@ -27,6 +27,7 @@ function getInfoMovie(movie) {
                         movieApi = data;
                         displayMovieInfo(data);
                         genres = data.Genre.split(", ");
+                        $('#poster').removeClass("hidden");
                         $('#errorMessageEl').addClass("hidden");
                         $('#giphy-cols').removeClass("hidden");
                         $('#poster__card').removeClass("hidden");
@@ -119,3 +120,24 @@ $(document).ready(function () {
     $('#giphy-cols').addClass("hidden");
     $('#poster__card').addClass("hidden");
 });
+
+// adds search history into localstoraga
+var addtosrch = function(movie) {
+    var srchLst = {
+        movie: []
+    }
+    // check to see if there is a search history in localstorage
+    if (!localStorage.getItem("moviesrch")) {
+        // add movie name to srchLst array
+    srchLst['movie'].push(movie);
+
+    // set srchLst array movie value into localstorage
+    localStorage.setItem("moviesrch",srchLst.movie);
+        
+    } else {
+        // adds current search to existing search list in localstorage 
+        var strge = localStorage.getItem("moviesrch");
+        var strgeupd = strge + "," + movie;
+        localStorage.setItem("moviesrch",strgeupd);
+    }    
+}
