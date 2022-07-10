@@ -6,6 +6,11 @@ Live URL: https://channchealysek.github.io/cs-movie-info-db/
 Screenshot:
 ![_C__Users_sekch_desktop_projects_cs-movie-info-db_index html_search=](https://user-images.githubusercontent.com/102747948/178090989-7cadd3da-acb0-4b20-8f04-97d98c745f3b.png)
 
+Thank to my group members:
+	- Mr. Edward Sanchez
+	- Mr. Joshua Handdix
+	- Mr. Matthew Russell
+
 *** you can copy and use anywhere but under yourself responsibility.
 
 Thanks.
