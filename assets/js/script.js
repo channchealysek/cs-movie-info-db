@@ -120,3 +120,16 @@ $(document).ready(function () {
     $('#giphy-cols').addClass("hidden");
     $('#poster__card').addClass("hidden");
 });
+
+var loadMovieSrch = function() {
+    movieSrch = JSON.parse(localStorage.getItem("movieSrch"));
+
+    if(!movieSrch) {
+        movieSrch = {
+            movies: []
+    }
+}
+
+var saveMovieSrch = function() {
+    localStorage.setItem("movies")
+}
