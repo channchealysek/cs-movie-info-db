@@ -4,7 +4,7 @@
 Live URL: https://channchealysek.github.io/cs-movie-info-db/
 
 Screenshot:
-![_C__Users_sekch_desktop_projects_cs-movie-info-db_index html_search=](https://user-images.githubusercontent.com/102747948/178090989-7cadd3da-acb0-4b20-8f04-97d98c745f3b.png)
+![channchealysek github io_cs-movie-info-db_](https://user-images.githubusercontent.com/102747948/178157669-d4a50c42-14b8-4b50-b337-947d4055a107.png)
 
 Thank to my group members:
 	<ul>
